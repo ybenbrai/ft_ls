@@ -1,3 +1,10 @@
 # recoding the command "ls"
 -   Working on the getting started part.
 -   Recoding the first part of the subject and structring the code .
+
+# Reminder 
+-   to use the new norminette write "   norm-v3     "
+
+# To do :
+-   Fix the norminette erreur in libft.
+-   make a new makefile to compile the whole project.
