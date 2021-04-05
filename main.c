@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ls.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 16:21:19 by ybenbrai          #+#    #+#             */
-/*   Updated: 2021/04/04 17:19:27 by ybenbrai         ###   ########.fr       */
+/*   Updated: 2021/04/04 17:53:41 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/types.h>
-#include <stdio.h>
-#include <dirent.h>
-#include <dirent.h>
-#include <string.h>
+#include "ft_ls.h"
 
 int main(int argc, char **argv)
 {
@@ -24,7 +20,7 @@ int main(int argc, char **argv)
 	if (argc > 1)
 	{
 		dir = opendir(argv[1]);
-		if (dir == NULL)
+		if (!dir)
 		{
 			perror("Unable to read directory");
 			return (1);
