@@ -15,11 +15,9 @@
 
 #include "libft/libft.h"
 #include <time.h>
-#include <sys/types.h>
-#include <sys/xattr.h>
-#include <sys/types.h>
-#include <sys/acl.h>
-#include <sys/types.h>
 #include <dirent.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 
 #endif
