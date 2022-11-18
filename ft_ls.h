@@ -19,5 +19,12 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <errno.h>
+#include <stdlib.h>
+#include <stdio.h>
 
+// t_ls	*storeDir(char *name, t_ls *ls);
+void	print_ls(char *path);
+char	**storeDir(char *name, char **ls);
+void _ls(const char *dir,int op_a,int op_l);
 #endif

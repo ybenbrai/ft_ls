@@ -12,52 +12,34 @@
 
 #include "ft_ls.h"
 
-void	print_ls(char *path)
+int main(int argc, const char *argv[])
 {
-	DIR				*dir;
-	struct dirent	*sd;
-
-	dir = opendir(path);
-	if (dir == NULL)
+	if (argc == 1)
 	{
-		ft_putstr("ft_ls: ");
-		ft_putstr(path);
-		ft_putstr(": No such file or directory");
+		_ls(".", 0, 0);
 	}
-	else
+	else if (argc == 2)
 	{
-		while ((sd = readdir(dir)) != NULL)
+		if (argv[1][0] == '-')
 		{
-			sort_ls(sd->d_name);
-			if (sd->d_name[0] != '.')
+			// Checking if option is passed
+			// Options supporting: a, l
+			int op_a = 0, op_l = 0;
+			char *p = (char *)(argv[1] + 1);
+			while (*p)
 			{
-				// sort sd->d_name as the command ls in the terminal
-				ft_putstr(sd->d_name);
-				ft_putstr("  ");
+				if (*p == 'a')
+					op_a = 1;
+				else if (*p == 'l')
+					op_l = 1;
+				else
+				{
+					perror("Option not available");
+					exit(EXIT_FAILURE);
+				}
+				p++;
 			}
+			_ls(".", op_a, op_l);
 		}
 	}
-	ft_putchar('\n');
-	closedir(dir);
 }
-
-int main(int argc, char **argv)
-{
-	(void)argv;
-	if (argc == 1)
-		print_ls(".");
-	return (0);
-}
-// if (argc > 1)
-// {
-// 	dir = opendir(argv[1]);
-// 	if (!dir)
-// 	{
-// 		perror("Unable to read directory");
-// 		return (1);
-// 	}
-// 	while ((dirent = readdir(dir)))
-// 	{
-// 		if (strcmp(dirent->d_name, ".") && strcmp(dirent->d_name, ".."))
-// 			printf("%s\n", dirent->d_name);
-// }
