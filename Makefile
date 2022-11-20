@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC=main.c ls.c
+SRC=main.c ls.c sorting.c printers.c
 
 NAME = ft_ls
 

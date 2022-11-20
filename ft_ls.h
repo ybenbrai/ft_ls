@@ -23,8 +23,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-// t_ls	*storeDir(char *name, t_ls *ls);
-void	print_ls(char *path);
-char	**storeDir(char *name, char **ls);
-void _ls(const char *dir,int op_a,int op_l);
+typedef struct s_ls
+{
+    char            *name;
+    struct  s_ls    *next;
+}				t_ls;
+
+t_ls    *_ls(const char *dir, t_ls *ls);
+t_ls    *sort_alpha(t_ls *ls);
+void    ls_printer(t_ls *ls);
 #endif
