@@ -31,7 +31,8 @@ char	*ft_strtrim(const char *s)
 		i++;
 	if (z <= i)
 		return (ft_strdup(""));
-	if (!(trimmed = (char *)malloc(sizeof(char) * (z - i + 2))))
+		trimmed = (char *)malloc(sizeof(char) * (z - i + 2));
+	if (trimmed == NULL)
 		return (NULL);
 	h = z - i;
 	while (j <= h)
