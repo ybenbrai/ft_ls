@@ -14,7 +14,7 @@
 
 char	*ft_strccpy(char *dest, char const *str, char c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != c && str[i])

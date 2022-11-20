@@ -14,7 +14,7 @@
 
 char	*ft_strnew(size_t size)
 {
-	char *fraiche;
+	char	*fraiche;
 
 	return (fraiche = (char *)ft_memalloc(size + 1));
 }

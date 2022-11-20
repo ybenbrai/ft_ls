@@ -22,8 +22,8 @@ char	**ft_strsplit(char const *str, char c)
 	flag = 0;
 	j = 0;
 	i = -1;
-	if (!(str) || !(tab = (char **)malloc(sizeof(char *) * ft_count_words(str,
-						c) + 1)))
+	tab = (char **)malloc(sizeof(char *) * ft_count_words(str, c) + 1);
+	if (!(str) || !(tab) || tab == NULL)
 		return (NULL);
 	while (str[++i])
 	{

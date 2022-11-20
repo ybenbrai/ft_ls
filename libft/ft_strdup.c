@@ -22,10 +22,9 @@ char	*ft_strdup(const char *s1)
 	{
 		i++;
 	}
-	if ((dest = (char *)malloc(sizeof(char) * i + 1)) == NULL)
-	{
+	dest = (char *)malloc(sizeof(char) * i + 1);
+	if (dest == NULL)
 		return (NULL);
-	}
 	i = 0;
 	while (s1[i])
 	{

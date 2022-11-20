@@ -14,7 +14,7 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int index;
+	unsigned int	index;
 
 	if (s)
 	{

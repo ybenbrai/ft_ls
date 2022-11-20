@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int		ft_intcount(int n)
+int	ft_intcount(int n)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (n != 0)

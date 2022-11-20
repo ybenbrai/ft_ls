@@ -72,7 +72,6 @@ int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 
-char				*ft_itoa(int c);
 char				*ft_strccpy(char *dest, char const *str, char c);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);

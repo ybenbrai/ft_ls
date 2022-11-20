@@ -14,7 +14,7 @@
 
 int	ft_cchar(char const *str, char c)
 {
-	int count_char;
+	int		count_char;
 
 	count_char = 0;
 	while (str[count_char] != c)
