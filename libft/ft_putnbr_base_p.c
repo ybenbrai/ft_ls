@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_base_p.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 17:46:14 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/20 18:49:39 by ybenbrai         ###   ########.fr       */
+/*   Created: 2022/11/20 18:40:39 by ybenbrai          #+#    #+#             */
+/*   Updated: 2022/11/20 18:40:56 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_putnbr_base_p(unsigned long long int n, char *base)
 {
-	char	*fraiche;
+	unsigned long long	len;
+	int					count;
+	int					i;
 
-	fraiche = NULL;
-	if (s1 && s2)
+	i = 0;
+	count = 0;
+	len = ft_strlen(base);
+	if (n >= len)
 	{
-		fraiche = (char *)malloc(sizeof(char)
-				*(ft_strlen(s1) + ft_strlen(s2) + 1));
-		if (!fraiche)
-			return (NULL);
-		ft_strcpy(fraiche, s1);
-		ft_strcat(fraiche, s2);
+		count += ft_putnbr_base_p(n / len, base);
+		count += ft_putnbr_base_p(n % len, base);
 	}
-	return (fraiche);
+	else
+	{
+		write(1, &base[n], 1);
+		count++;
+	}
+	return (count);
 }

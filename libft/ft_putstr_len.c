@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 17:46:14 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/20 18:49:39 by ybenbrai         ###   ########.fr       */
+/*   Created: 2022/11/20 18:47:27 by ybenbrai          #+#    #+#             */
+/*   Updated: 2022/11/20 18:47:33 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_putstr_len(char *str)
 {
-	char	*fraiche;
+	int	i;
 
-	fraiche = NULL;
-	if (s1 && s2)
+	i = 0;
+	if (str == NULL)
 	{
-		fraiche = (char *)malloc(sizeof(char)
-				*(ft_strlen(s1) + ft_strlen(s2) + 1));
-		if (!fraiche)
-			return (NULL);
-		ft_strcpy(fraiche, s1);
-		ft_strcat(fraiche, s2);
+		write(1, "(null)", 6);
+		return (6);
 	}
-	return (fraiche);
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (i);
 }

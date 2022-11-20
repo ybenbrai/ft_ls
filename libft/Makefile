@@ -13,6 +13,20 @@
 NAME=libft.a
 SRC=ft_atoi.c \
 ft_bzero.c  \
+ft_itoa.c \
+ft_nbrlen.c \
+ft_strrev_str.c \
+ft_putstr_len.c \
+ft_putnbr_len.c \
+ft_putnbr_dec.c \
+ft_putnbr_base.c \
+ft_putnbr_base_p.c \
+ft_puthexup.c \
+ft_puthexlow.c \
+ft_puthex.c \
+ft_putdec.c \
+ft_putchar_len.c \
+ft_printf.c \
 ft_intcount.c \
 ft_isalnum.c \
 ft_isalpha.c \

@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 17:46:14 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/20 18:49:39 by ybenbrai         ###   ########.fr       */
+/*   Created: 2022/11/20 18:48:24 by ybenbrai          #+#    #+#             */
+/*   Updated: 2022/11/20 19:07:57 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_putnbr_len(int n)
 {
-	char	*fraiche;
+	int	i;
 
-	fraiche = NULL;
-	if (s1 && s2)
+	i = 0;
+	if (n == -2147483648)
 	{
-		fraiche = (char *)malloc(sizeof(char)
-				*(ft_strlen(s1) + ft_strlen(s2) + 1));
-		if (!fraiche)
-			return (NULL);
-		ft_strcpy(fraiche, s1);
-		ft_strcat(fraiche, s2);
+		ft_putstr("-2147483648");
+		return (11);
 	}
-	return (fraiche);
+	if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+		i++;
+	}
+	if (n >= 10)
+	{
+		i += ft_putnbr_len(n / 10);
+		i += ft_putnbr_len(n % 10);
+	}
+	else
+	{
+		ft_putchar(n + '0');
+		i++;
+	}
+	return (i);
 }

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 17:46:14 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/20 18:49:39 by ybenbrai         ###   ########.fr       */
+/*   Created: 2022/11/20 18:47:58 by ybenbrai          #+#    #+#             */
+/*   Updated: 2022/11/20 18:48:02 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_puthex(unsigned int n)
 {
-	char	*fraiche;
+	char	*hexa;
 
-	fraiche = NULL;
-	if (s1 && s2)
+	hexa = "0123456789abcdef";
+	if (n >= 16)
 	{
-		fraiche = (char *)malloc(sizeof(char)
-				*(ft_strlen(s1) + ft_strlen(s2) + 1));
-		if (!fraiche)
-			return (NULL);
-		ft_strcpy(fraiche, s1);
-		ft_strcat(fraiche, s2);
+		ft_puthex(n / 16);
+		ft_puthex(n % 16);
 	}
-	return (fraiche);
+	else
+		ft_putchar(hexa[n]);
+	return (1);
 }

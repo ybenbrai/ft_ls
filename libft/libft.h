@@ -6,7 +6,7 @@
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 11:41:44 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/20 18:28:37 by ybenbrai         ###   ########.fr       */
+/*   Updated: 2022/11/20 19:07:09 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <stdlib.h>
 # include <string.h>
 # include <ctype.h>
+# include <limits.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -24,7 +26,20 @@ typedef struct s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
-
+int					ft_putchar_len(char c);
+int					ft_putdec(int n);
+int					ft_puthex(unsigned int n);
+int					ft_puthexlow(unsigned int n);
+int					ft_puthexup(unsigned int n);
+int					ft_putnbr_base_p(unsigned long long int n, char *base);
+int					ft_putnbr_base(unsigned long long int n, char *base);
+int					ft_putnbrdec(unsigned int n);
+int					ft_putnbr_len(int n);
+char				*ft_strrev_str(char *str);
+int					ft_putstr_len(char *str);
+int					ft_printf(const char *str, ...);
+int					ft_nbrlen(int n);
+char				*ft_itoa(int n);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));

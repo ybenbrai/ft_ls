@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strrev_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 17:46:14 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/20 18:49:39 by ybenbrai         ###   ########.fr       */
+/*   Created: 2022/11/20 18:43:07 by ybenbrai          #+#    #+#             */
+/*   Updated: 2022/11/20 19:03:51 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strrev_str(char *str)
 {
-	char	*fraiche;
+	int		i;
+	int		j;
+	char	tmp;
 
-	fraiche = NULL;
-	if (s1 && s2)
+	i = 0;
+	j = ft_strlen(str) - 1;
+	while (i < j)
 	{
-		fraiche = (char *)malloc(sizeof(char)
-				*(ft_strlen(s1) + ft_strlen(s2) + 1));
-		if (!fraiche)
-			return (NULL);
-		ft_strcpy(fraiche, s1);
-		ft_strcat(fraiche, s2);
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		i++;
+		j--;
 	}
-	return (fraiche);
+	return (str);
 }

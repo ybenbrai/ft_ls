@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 17:46:14 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/20 18:49:39 by ybenbrai         ###   ########.fr       */
+/*   Created: 2022/11/20 18:38:28 by ybenbrai          #+#    #+#             */
+/*   Updated: 2022/11/20 19:07:46 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_itoa(int n)
 {
-	char	*fraiche;
+	int		i;
+	int		sign;
+	char	*str;
 
-	fraiche = NULL;
-	if (s1 && s2)
+	i = 0;
+	sign = 1;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n < 0)
 	{
-		fraiche = (char *)malloc(sizeof(char)
-				*(ft_strlen(s1) + ft_strlen(s2) + 1));
-		if (!fraiche)
-			return (NULL);
-		ft_strcpy(fraiche, s1);
-		ft_strcat(fraiche, s2);
+		sign = -1;
+		n = -n;
 	}
-	return (fraiche);
+	str = (char *)malloc(sizeof(char) * (ft_nbrlen(n) + 1));
+	if (str == NULL)
+		return (NULL);
+	while (n > 0)
+	{
+		str[i++] = (n % 10) + '0';
+		n = n / 10;
+	}
+	if (sign == -1)
+		str[i++] = '-';
+	str[i] = '\0';
+	return (ft_strrev_str(str));
 }

@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_dec.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/20 17:46:14 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/20 18:49:39 by ybenbrai         ###   ########.fr       */
+/*   Created: 2022/11/20 18:41:33 by ybenbrai          #+#    #+#             */
+/*   Updated: 2022/11/20 18:41:51 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_putnbrdec(unsigned int n)
 {
-	char	*fraiche;
+	int	i;
 
-	fraiche = NULL;
-	if (s1 && s2)
+	i = 0;
+	if (n < 0)
 	{
-		fraiche = (char *)malloc(sizeof(char)
-				*(ft_strlen(s1) + ft_strlen(s2) + 1));
-		if (!fraiche)
-			return (NULL);
-		ft_strcpy(fraiche, s1);
-		ft_strcat(fraiche, s2);
+		ft_putchar('-');
+		n = -n;
+		i++;
 	}
-	return (fraiche);
+	if (n >= 10)
+	{
+		i += ft_putnbrdec(n / 10);
+		i += ft_putnbrdec(n % 10);
+	}
+	else
+	{
+		ft_putchar(n + '0');
+		i++;
+	}
+	return (i);
 }
