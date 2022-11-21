@@ -37,12 +37,7 @@ typedef struct s_ls
 }				t_ls;
 
 t_ls    *_ls(const char *dir, t_ls *ls);
-t_ls    *sort_alpha(t_ls *ls);
-t_ls    *sortByMaj(t_ls *ls);
 t_ls    *ft_sort(t_ls *ls);
-t_ls    *ft_swap(t_ls *ls);
 void    ls_printer(t_ls *ls);
-void    printf_space(int i);
-int ft_islower(int c);
-int ft_isupper(int c);
+
 #endif

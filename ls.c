@@ -6,7 +6,7 @@
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:34:29 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/21 20:02:02 by ybenbrai         ###   ########.fr       */
+/*   Updated: 2022/11/21 22:42:34 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,8 @@ t_ls	*_ls(const char *dir, t_ls *ls)
 			tmp->next = (t_ls *)malloc(sizeof(t_ls));
 			tmp = tmp->next;		
 		}
-		
 	}
 	tmp->next = NULL;
 	closedir(dh);
-	ft_sort(ls);
 	return (ls);
 }
