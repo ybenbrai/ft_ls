@@ -6,7 +6,7 @@
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/26 11:41:44 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/20 19:07:09 by ybenbrai         ###   ########.fr       */
+/*   Updated: 2022/11/21 20:47:47 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ int					ft_putstr_len(char *str);
 int					ft_printf(const char *str, ...);
 int					ft_nbrlen(int n);
 char				*ft_itoa(int n);
+int					ft_islower(int c);
+int					ft_isupper(int c);
+void    			ft_strswap(char **a, char **b);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));

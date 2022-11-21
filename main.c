@@ -29,7 +29,8 @@ int main(int c, char **v)
 	if (c == 1)
 	{
 		ls->flag_n = 1;
+		
 		ls =_ls(".", ls);
-		ls_printer(ls);
+		// ls_printer(ls);
 	}
 }

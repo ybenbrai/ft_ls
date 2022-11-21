@@ -6,7 +6,7 @@
 #    By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/27 10:16:09 by ybenbrai          #+#    #+#              #
-#    Updated: 2021/04/05 14:49:24 by ybenbrai         ###   ########.fr        #
+#    Updated: 2022/11/21 20:48:26 by ybenbrai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,14 @@ ft_itoa.c \
 ft_nbrlen.c \
 ft_strrev_str.c \
 ft_putstr_len.c \
+ft_strswap.c \
 ft_putnbr_len.c \
 ft_putnbr_dec.c \
 ft_putnbr_base.c \
 ft_putnbr_base_p.c \
 ft_puthexup.c \
+ft_isupper.c \
+ft_islower.c \
 ft_puthexlow.c \
 ft_puthex.c \
 ft_putdec.c \

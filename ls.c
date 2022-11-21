@@ -6,7 +6,7 @@
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:34:29 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/21 14:29:23 by ybenbrai         ###   ########.fr       */
+/*   Updated: 2022/11/21 20:02:02 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,25 @@ t_ls	*_ls(const char *dir, t_ls *ls)
 	
 	dh = opendir(dir);
 	tmp = ls;
+	if (dh == NULL)
+	{
+		printf("Error: %s\n", strerror(errno));
+		return (NULL);
+	}
 	while ((d = readdir(dh)) != NULL)
 	{
-		if(d->d_name[0] != '.')
+		if(d->d_name[0] == '.')
+			continue ;
+		else
 		{
-			ls->name = d->d_name;
-			ls->next = (t_ls *)malloc(sizeof(t_ls));
-			ls = ls->next;
+			tmp->name = ft_strdup(d->d_name);
+			tmp->next = (t_ls *)malloc(sizeof(t_ls));
+			tmp = tmp->next;		
 		}
-
+		
 	}
-	ls->next = NULL;
-	ls = tmp;
+	tmp->next = NULL;
+	closedir(dh);
+	ft_sort(ls);
 	return (ls);
-	// ft_printf("Sorting...\n");
-	// ft_printf("Sorted...\n");
 }
