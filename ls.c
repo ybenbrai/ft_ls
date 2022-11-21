@@ -6,7 +6,7 @@
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:34:29 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/20 21:12:17 by ybenbrai         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:29:23 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ t_ls	*_ls(const char *dir, t_ls *ls)
 
 	}
 	ls->next = NULL;
-	ls = sort_alpha(ls);
-	return (tmp);
+	ls = tmp;
+	return (ls);
 	// ft_printf("Sorting...\n");
 	// ft_printf("Sorted...\n");
 }

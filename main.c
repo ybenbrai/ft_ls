@@ -28,35 +28,8 @@ int main(int c, char **v)
 		ft_error("Error: malloc failed");
 	if (c == 1)
 	{
+		ls->flag_n = 1;
 		ls =_ls(".", ls);
-		// printf("Printing... %s\n",ls->name);
-		// function to sort ls->name by alphabetical order
-		// puts("Printing ls...\n");
 		ls_printer(ls);
 	}
 }
-	// }
-	// else if (argc == 2)
-	// {
-	// 	if (argv[1][0] == '-')
-	// 	{
-	// 		// Checking if option is passed
-	// 		// Options supporting: a, l
-	// 		int op_a = 0, op_l = 0;
-	// 		char *p = (char *)(argv[1] + 1);
-	// 		while (*p)
-	// 		{
-	// 			if (*p == 'a')
-	// 				op_a = 1;
-	// 			else if (*p == 'l')
-	// 				op_l = 1;
-	// 			else
-	// 			{
-	// 				perror("Option not available");
-	// 				exit(EXIT_FAILURE);
-	// 			}
-	// 			p++;
-	// 		}
-	// 		_ls(".", op_a, op_l);
-	// 	}
-	// }

@@ -27,9 +27,16 @@ typedef struct s_ls
 {
     char            *name;
     struct  s_ls    *next;
+    int             flag_r;
+    int             flag_l;
+    int             flag_a;
+    int             flag_t;
+    int             flag_n;
 }				t_ls;
 
 t_ls    *_ls(const char *dir, t_ls *ls);
 t_ls    *sort_alpha(t_ls *ls);
+t_ls    *sortByMaj(t_ls *ls);
+t_ls    *sort(t_ls *ls);
 void    ls_printer(t_ls *ls);
 #endif
