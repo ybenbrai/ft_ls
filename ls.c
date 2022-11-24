@@ -6,7 +6,7 @@
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:34:29 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/21 22:42:34 by ybenbrai         ###   ########.fr       */
+/*   Updated: 2022/11/25 00:13:53 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ t_ls	*_ls(const char *dir, t_ls *ls)
 {
 	struct dirent *d;
 	DIR *dh;
-	t_ls *tmp;
+	t_ls *head;
 	
+	head = ls;
 	dh = opendir(dir);
-	tmp = ls;
 	if (dh == NULL)
 	{
 		printf("Error: %s\n", strerror(errno));
@@ -27,16 +27,14 @@ t_ls	*_ls(const char *dir, t_ls *ls)
 	}
 	while ((d = readdir(dh)) != NULL)
 	{
-		if(d->d_name[0] == '.')
-			continue ;
-		else
+		if(d->d_name[0] != '.')
 		{
-			tmp->name = ft_strdup(d->d_name);
-			tmp->next = (t_ls *)malloc(sizeof(t_ls));
-			tmp = tmp->next;		
+			ls->name = ft_strdup(d->d_name);
+			ls->next = (t_ls *)malloc(sizeof(t_ls));
+			ls = ls->next;		
 		}
 	}
-	tmp->next = NULL;
+	ls = head;
 	closedir(dh);
 	return (ls);
 }

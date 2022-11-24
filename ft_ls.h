@@ -28,11 +28,15 @@ typedef struct s_ls
     char            *name;
     struct  s_ls    *next;
     struct  s_ls    *prev;
-    int             flag_r;
-    int             flag_l;
-    int             flag_a;
-    int             flag_t;
-    int             flag_n;
+    char             flag;
+    char            *path;
+    char            *time;
+    char            *mode;
+    char            *link;
+    char            *user;
+    char            *group;
+    char            *size;
+    char            *blocks;
 
 }				t_ls;
 

@@ -6,7 +6,7 @@
 /*   By: ybenbrai <ybenbrai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:56:31 by ybenbrai          #+#    #+#             */
-/*   Updated: 2022/11/21 22:57:13 by ybenbrai         ###   ########.fr       */
+/*   Updated: 2022/11/25 00:21:02 by ybenbrai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void    ls_printer(t_ls *ls)
     int i;
 
     i = 0;
-    while(ls->next != NULL)
+    while(ls->next->name != NULL)
     {
-        if(i < 7)
+        printf("%s", ls->name);
+        if(i < 6)
         {
-            printf("%s       ", ls->name);
+            printf("%s     ", ls->name);
             i++;
-            
         }
         else
         {
